@@ -1,0 +1,97 @@
+body {
+  padding: 100px 0;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100vw;
+}
+.calender {
+  width: 50vw;
+  height: 65vh;
+  margin: 0 auto;
+}
+
+.button_container button {
+  width: 100px;
+  padding: 10px;
+}
+.todo_container {
+  border: 1rem solid rgba(8, 24, 70, 0.107);
+  border-radius: 30px;
+  background-color: rgba(8, 24, 70, 0.107);
+  margin: 0 auto;
+}
+.cur_date {
+  text-align: center;
+  font-size: 2rem;
+  margin: 0;
+  padding: 15px;
+}
+.todoForm {
+  padding: 10px;
+  text-align: center;
+}
+.todoForm input {
+  text-align: center;
+  margin-right: 10px;
+  background-color: rgba(149, 162, 201, 0.107);
+  font-size: 2rem;
+}
+.todolist li {
+  font-size: 2rem;
+  width: 350px;
+  list-style: none;
+}
+
+/* 일정게시 버튼 클릭 하면 나오는 모달창*/
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: gray;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 300px;
+  max-width: 80%;
+  text-align: center;
+  z-index: 1001;
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+}
+
+.modal-content input {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.modal-content button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.modal-content button:last-child {
+  background-color: #f44336;
+}
