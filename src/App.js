@@ -5,10 +5,14 @@ import "./css/App.css";
 import Modal from "react-modal";
 import PopupModal from "./PopupModal";
 function App() {
+  const [data, setData] = useState([]);
   const [currentDate, setCurrentDate] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [savedData, setSavedData] = useState([]); // 저장된 데이터를 관리하는 상태 변수
   useEffect(() => {
+    fetch("http://localhost:3000/data/data.json")
+      .then((res) => res.json)
+      .then((res) => setData(res.data));
     // App 컴포넌트가 마운트될 때 실행되어 모달의 앱 요소를 설정
     Modal.setAppElement("#root");
   }, []);
@@ -33,7 +37,11 @@ function App() {
   return (
     <div className="container">
       <div className="calender">
-        <MyCalender onDateChange={handleDateChange} savedData={savedData} />
+        <MyCalender
+          onDateChange={handleDateChange}
+          savedData={savedData}
+          data={data}
+        />
       </div>
       <div className="button_container">
         <button onClick={openModal}>+일정게시</button>
